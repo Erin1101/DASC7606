@@ -1,0 +1,98 @@
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+0it [00:00, ?it/s]
+
+1it [00:03,  3.01s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+101it [01:15,  1.39it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+171it [02:06,  1.35it/s]
+Traceback (most recent call last):
+  File "train.py", line 148, in <module>
+    main()
+  File "train.py", line 85, in main
+    classification_loss, regression_loss = retinanet([data['img'].cuda().float(), data['annot'].cuda()])
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/model.py", line 123, in forward
+    x3 = self.layer3(x2)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/utils.py", line 75, in forward
+    out = self.conv3(out)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: CUDA out of memory. Tried to allocate 70.00 MiB (GPU 0; 10.75 GiB total capacity; 8.88 GiB already allocated; 55.62 MiB free; 9.29 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

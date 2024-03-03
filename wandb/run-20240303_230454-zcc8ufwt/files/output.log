@@ -1,0 +1,15 @@
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Num training images: 2031
+Traceback (most recent call last):
+  File "train.py", line 159, in <module>
+    main()
+  File "train.py", line 69, in main
+    mse_loss = nn.MSELoss()
+NameError: name 'nn' is not defined

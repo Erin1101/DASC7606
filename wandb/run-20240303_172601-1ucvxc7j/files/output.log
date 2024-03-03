@@ -1,0 +1,25 @@
+loading annotations into memory...
+Done (t=0.08s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+Num training images: 2031
+
+0it [00:05, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 148, in <module>
+    main()
+  File "train.py", line 85, in main
+    classification_loss, regression_loss = retinanet([data['img'].cuda().float(), data['annot'].cuda()])
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/model.py", line 127, in forward
+    features = self.fpn([x2, x3, x4])
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/FPN.py", line 47, in forward
+    P3_x = P3_x + P4_upsampled_x
+RuntimeError: CUDA out of memory. Tried to allocate 86.00 MiB (GPU 0; 10.75 GiB total capacity; 9.22 GiB already allocated; 23.62 MiB free; 9.33 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

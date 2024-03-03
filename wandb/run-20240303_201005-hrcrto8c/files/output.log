@@ -1,0 +1,40 @@
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.03s)
+creating index...
+index created!
+Downloading: "https://download.pytorch.org/models/resnet101-5d3b4d8f.pth" to ./resnet101-5d3b4d8f.pth
+
+
+
+
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 170M/170M [00:07<00:00, 23.7MB/s]
+0it [00:00, ?it/s]
+0it [00:02, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 148, in <module>
+    main()
+  File "train.py", line 85, in main
+    classification_loss, regression_loss = retinanet([data['img'].cuda().float(), data['annot'].cuda()])
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/model.py", line 123, in forward
+    x3 = self.layer3(x2)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/DASC7606/retinanet/utils.py", line 68, in forward
+    out = self.bn1(out)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/modules/batchnorm.py", line 168, in forward
+    return F.batch_norm(
+  File "/userhome/cs2/u3619861/anaconda3/envs/retinanet/lib/python3.8/site-packages/torch/nn/functional.py", line 2282, in batch_norm
+    return torch.batch_norm(
+RuntimeError: CUDA out of memory. Tried to allocate 18.00 MiB (GPU 0; 10.75 GiB total capacity; 9.18 GiB already allocated; 17.62 MiB free; 9.33 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
